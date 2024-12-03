@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#div_top {
+    width: 100%;
+    height: 7vh;
+}
+
+#div_bottom {
+    width: 100%;
+    height: 92vh;
+    background-color: rgb(255, 255, 255);
+}
+
+#div_top_left {
+    float: left;
+    width: 30%;
+    height: 7vh;
+    background-color: #485680;
+}
+
+#div_top_right {
+    float: right;
+    width: 70%;
+    height: 7vh;
+    background-color: #485680;
+}
+
+#div_top_menu_container {
+    margin-top: 15px;
+}
+
+.menu {
+    text-decoration: none;
+    margin-left: 60px;
+    padding: 15px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#UIU_Logo_container{
+    margin-top: 20px;
+    width: 100%;
+    height: 16vh;
+}
+
+#UIU_Logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#event_create_container {
+    height: 500px;
+}
+
+#left_event_create_container{
+    float: left;
+    width: 50%;
+    height: 500px;
+}
+
+#right_event_create_container{
+    float: right;
+    width: 50%;
+    height: 500px;
+    margin-top: 5%;
+}
+
+#pick_picture {
+    display: block; 
+    margin-left: auto;
+    margin-right: auto; 
+    margin-top: 20px; 
+    background-color: #F68B1F; 
+    color: white;
+    border: none; 
+    padding : 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#pick_judge {
+    display: block; 
+    margin-left: auto;
+    margin-right: auto; 
+    margin-top: 20px; 
+    background-color:  #F68B1F; 
+    color: white;
+    border: none; 
+    padding : 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#save {
+    display: block; 
+    margin-left: auto;
+    margin-right: auto; 
+    margin-top: 20px; 
+    background-color:  #485680; 
+    color: white;
+    border: none; 
+    padding : 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#save:hover{
+    background-color: black;
+    color: white;
+}

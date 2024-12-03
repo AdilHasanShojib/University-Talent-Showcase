@@ -1,0 +1,109 @@
+I also add the student's name, ID, and upload time. please make the front judge rating page design according to the above pic I provided. By default stars pic will be black. when the judge rates the content it will be yellow. mp3 can be listening, mp4 can be play and text can be read. Just change the frontend design according to the picture. update the css and also code.if necessary.here is the code. "<?php
+// Include the database connection
+$conn = new mysqli('localhost', 'root', '', 'talent_showcase');
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+
+// Fetch the content from the database
+$query = "SELECT * FROM content_uploads";
+$result = mysqli_query($conn, $query);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Judge Rating</title>
+    <link rel="stylesheet" href="judge.css">
+    <style>
+        .star-rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+
+        .star-rating input {
+            display: none;
+        }
+
+        .star-rating label {
+            font-size: 2em;
+            color: #ddd;
+            cursor: pointer;
+        }
+
+        .star-rating input:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: gold;
+        }
+
+        .rating-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .media-container {
+            max-width: 400px;
+            margin-right: 20px;
+        }
+
+        .media-container img, .media-container video, .media-container audio, .media-container iframe {
+            max-width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Judge Rating</h1>
+
+    <div class="content-list">
+        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+            <div class="content-item">
+                <div class="media-container">
+                    <?php if ($row['content_type'] == 'mp4') { ?>
+                        <video controls>
+                            <source src="uploads/<?php echo $row['content_file']; ?>" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    <?php } elseif ($row['content_type'] == 'mp3') { ?>
+                        <audio controls>
+                            <source src="uploads/<?php echo $row['content_file']; ?>" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    <?php } elseif ($row['content_type'] == 'text') { ?>
+                        <iframe src="uploads/<?php echo $row['content_file']; ?>" frameborder="0" scrolling="auto"></iframe>
+                    <?php } elseif ($row['content_type'] == 'image') { ?>
+                        <img src="uploads/<?php echo $row['content_file']; ?>" alt="Content Image">
+                    <?php } ?>
+                </div>
+
+                <div class="rating-container">
+                    <h3><?php echo $row['title']; ?></h3>
+                    <form action="submit_rating.php" method="POST">
+                        <input type="hidden" name="content_id" value="<?php echo $row['id']; ?>">
+                        <div class="star-rating">
+                            <input type="radio" id="5-stars-<?php echo $row['id']; ?>" name="rating" value="5" />
+                            <label for="5-stars-<?php echo $row['id']; ?>">★</label>
+                            <input type="radio" id="4-stars-<?php echo $row['id']; ?>" name="rating" value="4" />
+                            <label for="4-stars-<?php echo $row['id']; ?>">★</label>
+                            <input type="radio" id="3-stars-<?php echo $row['id']; ?>" name="rating" value="3" />
+                            <label for="3-stars-<?php echo $row['id']; ?>">★</label>
+                            <input type="radio" id="2-stars-<?php echo $row['id']; ?>" name="rating" value="2" />
+                            <label for="2-stars-<?php echo $row['id']; ?>">★</label>
+                            <input type="radio" id="1-star-<?php echo $row['id']; ?>" name="rating" value="1" />
+                            <label for="1-star-<?php echo $row['id']; ?>">★</label>
+                        </div>
+                        <button type="submit" class="rate-btn">Submit Rating</button>
+                    </form>
+                </div>
+            </div>
+        <?php } ?>
+    </div>
+</body>
+</html>
+"

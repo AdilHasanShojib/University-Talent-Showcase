@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Events</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="create_event_12.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <div style="width: 100%; height: 1vh; background-color: #f68b1f"></div>
+
+    
+    <div id="div_top">
+        <div id="div_top_left">
+            <img src="Images/header-logo.png" height="40px" width="auto">
+        </div>
+        <div id="div_top_right">
+            <div id="div_top_menu_container">
+                <table>
+                  <tr>
+                    <td>
+                        <a class="menu" href="s_home.php">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </td>
+                    <td>
+                        <a class="menu" href="upcoming_event_8.html">
+                            <i class="fas fa-calendar-alt"></i> All Events
+                        </a>
+                    </td>
+                    <td>
+                        <a class="menu" href="my_content.php">
+                            <i class="fas fa-file-alt"></i> My Content
+                        </a>
+                    </td>
+                    <td>
+                        <a class="menu" href="s_contentsubmit.php">
+                            <i class="fas fa-upload"></i> Upload
+                        </a>
+                    </td>
+                    <td>
+                        <a class="menu" href="resultPublication.php">
+                            <i class="fas fa-trophy"></i> Result
+                        </a>
+                    </td>
+                </tr>
+                
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="div_bottom" style="width: 80%; margin: 0 auto">
+      <div id="UIU_Logo_container">
+        <img
+          id="UIU_Logo"
+          src="images/UIU_LOGO.png"
+          height="100px"
+          width="auto"
+        />
+      </div>
+      <p
+        style="
+          text-align: center;
+          font-size: 30px;
+          font-weight: bold;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+        "
+      >
+        Upcoming Events
+      </p>
+    <div class="container my-5">
+      <div class="row" id="events-container">
+        <!-- Events will be inserted here -->
+      </div>
+    </div>
+
+    <script>
+        // Fetch events data from the PHP API
+        fetch('upcoming_event_8.php')
+          .then((response) => response.json())
+          .then((data) => {
+            let eventsContainer = document.getElementById('events-container');
+            let content = '';
+      
+            data.forEach((event, index) => {
+              if (index % 3 === 0) {
+                // Start a new row every 3 events
+                content += '<div class="row mb-4">';
+              }
+      
+              content += `
+                <div class="col-md-4 d-flex align-items-stretch">
+                  <div class="card event-card h-100">
+                    <img
+                      src="${event.image}"
+                      class="card-img-top"
+                      alt="${event.title}"
+                      style="object-fit: cover; height: 200px;"
+                    />
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title">${event.title}</h5>
+                      <p class="card-text flex-grow-1">${event.description.substring(0, 100)}...</p>
+                      <a href="event_details.php?id=${event.id}" class="btn btn-primary mt-auto">Details</a>
+                    </div>
+                  </div>
+                </div>
+              `;
+      
+              if (index % 3 === 2) {
+                // Close the row every 3 events
+                content += '</div>';
+              }
+            });
+      
+            // If there are any unclosed rows, close them
+            if (data.length % 3 !== 0) {
+              content += '</div>';
+            }
+      
+            // Insert the generated content into the events container
+            eventsContainer.innerHTML = content;
+          })
+          .catch((error) => console.error('Error fetching events:', error));
+      </script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
