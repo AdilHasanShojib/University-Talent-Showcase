@@ -1,5 +1,5 @@
-# University-Talent-Showcase
+# University Talent Showcase
 
+This project is designed to showcase university students' talents. Here's a preview:
 
-
-![Description of the GIF](GIF/University Talent Showcase.gif)
+![University Talent Showcase](GIF/University%20Talent%20Showcase.gif)
