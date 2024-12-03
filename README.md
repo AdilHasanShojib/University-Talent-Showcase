@@ -75,9 +75,6 @@ These instructions will help you set up and run the project on your local machin
 4. **Start the server:** <br>
    Run XAMPP/WAMP and place the project in the htdocs folder.
 
-5. **Open the application:** <br>
-Access the platform via http://localhost/university-talent-showcase.
-
 
 
 
