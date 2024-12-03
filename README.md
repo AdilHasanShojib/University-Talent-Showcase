@@ -70,7 +70,7 @@ These instructions will help you set up and run the project on your local machin
 3. **Import Database to MySQL:**
 
     ```bash
-    mysql -u username -p database_name < path/to/cinephilesdb.sql
+    mysql -u username -p database_name < path/to/talent_showcase.sql
     ```
 4. **Start the server:** <br>
    Run XAMPP/WAMP and place the project in the htdocs folder.
