@@ -30,7 +30,7 @@ Welcome to the University Talent Showcase Platform, a dynamic web-based project 
 - Students can upload content with descriptions and categories.
 - Judges rate the content on a scale of 1 to 5 stars.
 - Ratings are stored securely, and average scores determine ranking.
-- 
+ 
 ### Result Publication
 - The top 3 students are showcased based on average ratings from judges.
 - Results displayed in a visually appealing medal-style format.
@@ -38,11 +38,11 @@ Welcome to the University Talent Showcase Platform, a dynamic web-based project 
 
 
 
-## Technology Stack
-** Frontend: HTML, CSS, JavaScript, Bootstrap
-** Backend: PHP
-** Database: MySQL
-** Server: XAMPP
+## Technology Stack 
+**Frontend:** HTML, CSS, JavaScript, Bootstrap <br>
+**Backend:** PHP <br>
+**Database:** MySQL <br>
+**Server:** XAMPP <br>
 
 
 
@@ -72,10 +72,10 @@ These instructions will help you set up and run the project on your local machin
     ```bash
     mysql -u username -p database_name < path/to/cinephilesdb.sql
     ```
-4. ** Start the server: <br>
+4. **Start the server:** <br>
    Run XAMPP/WAMP and place the project in the htdocs folder.
 
-5. ** Open the application: <br>
+5. **Open the application:** <br>
 Access the platform via http://localhost/university-talent-showcase.
 
 
