@@ -1,8 +1,11 @@
-# University Talent Showcase
 
 
 
 ![University Talent Showcase](GIF/University%20Talent%20Showcase.gif)
+
+
+# University Talent Showcase
+
 
 Welcome to the University Talent Showcase Platform, a dynamic web-based project designed to empower students, faculty, and administrators in showcasing, evaluating, and managing talents across the university.
 
