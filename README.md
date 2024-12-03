@@ -21,7 +21,7 @@ Welcome to the University Talent Showcase Platform, a dynamic web-based project 
 - Upload various types of content (video, audio, images, blogs).
 - View all uploaded content and participate in events.
 - Check competition results and see top-rated content.
-- 
+
 ### Faculty Dashboard
 - Secure login for faculty members.
 - Rate student content with an intuitive star-rating system.
@@ -39,10 +39,10 @@ Welcome to the University Talent Showcase Platform, a dynamic web-based project 
 
 
 ## Technology Stack
-**Frontend: HTML, CSS, JavaScript, Bootstrap
-**Backend: PHP
-**Database: MySQL
-**Server: XAMPP
+** Frontend: HTML, CSS, JavaScript, Bootstrap
+** Backend: PHP
+** Database: MySQL
+** Server: XAMPP
 
 
 
@@ -56,7 +56,7 @@ These instructions will help you set up and run the project on your local machin
 
     ```bash
     git clone https://github.com/AdilHasanShojib/University-Talent-Showcase.git
-    cd cinephiles_
+  
     ```
 
 2. **Switch to Database Branch and Download Database File:**
@@ -72,10 +72,10 @@ These instructions will help you set up and run the project on your local machin
     ```bash
     mysql -u username -p database_name < path/to/cinephilesdb.sql
     ```
-4. **Start the server:
+4. ** Start the server: <br>
    Run XAMPP/WAMP and place the project in the htdocs folder.
 
-5. **Open the application:
+5. ** Open the application: <br>
 Access the platform via http://localhost/university-talent-showcase.
 
 
