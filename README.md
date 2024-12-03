@@ -1,7 +1,5 @@
 
-
-
-<img src="GIF/University%20Talent%20Showcase.gif" alt="University Talent Showcase" width="500" height="450">
+![University Talent Showcase](GIF/University%20Talent%20Showcase.gif)
 
 
 # University Talent Showcase
